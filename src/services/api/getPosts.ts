@@ -11,12 +11,11 @@ export const fetchPaginatedPosts = async (limit: number, page?: number) => {
   const pageLimit = Number(limit) * page;
 
   const comments = posts
-    // .sort(
-    //   // @ts-ignore
-    //   (a, b) =>
-    //     new Date(JSON.parse(a?.createdAt)).getTime() -
-    //     new Date(JSON.parse(b?.createdAt)).getTime()
-    // )
+    .sort(
+      (a: { createdAt: string; }, b: { createdAt: string; }) =>
+        new Date(JSON.parse(a?.createdAt)).getTime() -
+        new Date(JSON.parse(b?.createdAt)).getTime()
+    )
     ?.slice(offset, pageLimit);
 
   return comments;

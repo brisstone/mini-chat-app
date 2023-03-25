@@ -1,4 +1,3 @@
-// import { Button } from "@chakra-ui/react";
 import { Button, Input, Spin } from "antd";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useSelector, shallowEqual, useDispatch } from "react-redux";
@@ -101,11 +100,6 @@ export default function ChatScreen(): JSX.Element {
       oldMessage(currentPostPage + 1);
     }
   }, [comment, currentPostPage, dispatch, oldMessage, state?.id, users.users]);
-
-
-  useEffect(() => {
- 
-  }, [comment])
   
 
   return (
